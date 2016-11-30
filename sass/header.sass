@@ -200,16 +200,57 @@ h1, h2, h3, h4, h5, h6, .button
 
 .top-button
 	margin-top: 22px
+
+.slier-wrap
+	.slider-nav-container
+		position: relative
+	.slider-nav
+		color: #fff
+		font-size: 36px
+		position: absolute
+		width: 100%
+		z-index: 2
+		div
+			cursor: pointer
+			position: absolute
+			top: 180px
+			&:last-child
+				right: 0
+
 .slider
 	position: absolute
 	top: 0
 	width: 100%
 	overflow: hidden
+	.owl-dots
+		position: absolute
+		bottom: 50px
+		width: 100%
+		text-align: center
+		.owl-dot
+			display: inline-block
+			margin: 0 2px
+			width: 14px
+			height: 14px
+			background-color: darken($main-color, 10%)
+			border-radius: 10em
+			cursor: pointer
+			transition: background-color .30s ease
+			&.active
+				background-color: $accent-color
 	.slide-wrap
 		float: left
+		&.active
+			h2
+				opacity: 1
+				left: 0
+			p
+				opacity: 1
+				left: 0
+
 	.slide
 		color: #fff
-		padding-bottom: 50px
+		padding-bottom: 110px
 		position: relative
 		padding-top: 280px
 
@@ -219,12 +260,21 @@ h1, h2, h3, h4, h5, h6, .button
 			margin-top: 0
 			line-height: em(19px)
 			margin-bottom: 20px
+			position: relative
+			left: 100px
+			opacity: 0
+			transition: all 1s ease
 			&:first-line
 				color: $accent-color
 		p
 			font-family: "RobotoLight", sans-serif
 			opacity: .75
 			margin-bottom: 40px
+			position: relative
+			left: 100px
+			opacity: 0
+			transition: all 1s ease
+			transition-delay: .5s
 		&-bg
 			position: absolute
 			background-size: cover
